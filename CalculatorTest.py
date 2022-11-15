@@ -34,6 +34,10 @@ class CalculatorTest(unittest.TestCase):
     def test_error(self):
         with self.assertRaises(Exception):
             result = ne.evaluate("2*3+x")
+    
+    def test_sqrt_error(self):
+        with self.assertWarns(RuntimeWarning):
+            result = ne.evaluate("sqrt(-1)")
         
 
     
